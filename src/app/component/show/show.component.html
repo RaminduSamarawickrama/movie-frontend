@@ -1,0 +1,28 @@
+<div class="col">
+  <div class=" card h-100">
+    <div *ngIf="movie.poster_path">
+      <img
+        src="https://image.tmdb.org/t/p/original{{movie.poster_path}}"
+        class="card-img-top"
+        alt="Los Angeles Skyscrapers"
+      />
+    </div>
+    <div class="card-body">
+     <div *ngIf="movie.title" >
+       <a class="card-title" [routerLink]="['/shows/', movie.id, movie.show_type]">{{movie?.title}}</a>
+       <p class="card-text">
+         <span>Popularity : {{movie.popularity}}</span>
+       </p>
+       <span>Type of Show : {{movie.show_type}}</span>
+     </div>
+      <div *ngIf="movie.original_title">
+        <h5 class="card-title">{{movie?.original_title}}</h5>
+        <p class="card-text">
+          {{movie.overview}}
+        </p>
+        <span *ngIf="movie.release_date">Release Date : {{movie.release_date}}</span>
+        <span *ngIf="movie.release_date == null">Type of Show : Tv Series</span>
+      </div>
+    </div>
+  </div>
+</div>

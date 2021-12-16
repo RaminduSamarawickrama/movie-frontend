@@ -1,0 +1,7 @@
+<app-header></app-header>
+<div class="row row-cols-1 row-cols-md-4 g-4" style="padding-left: 3%; padding-right: 3%; padding-top: 3%" >
+  <div *ngFor="let show of showsList">
+    <app-show [movie]="show"></app-show>
+  </div>
+</div>
+

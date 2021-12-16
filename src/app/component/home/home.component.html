@@ -1,0 +1,18 @@
+<app-header></app-header>
+<div class="d-flex align-items-start bg-light mb-3" style="height: 100px; padding-top: 3%">
+  <div class="col">
+    <form class="d-flex input-group w-auto">
+      <input type="search" name="movieName" class="form-control" placeholder="Type Show Name" aria-label="Search" [(ngModel)]="movieName" style="margin-left: 3%"/>
+      <button class="btn btn-outline-primary" style="padding-left: 1%; margin-left: 2%" type="button" (click)="onClickSearchBtn(movieName)">
+        Search
+      </button>
+    </form>
+  </div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+<div class="row row-cols-1 row-cols-md-3 g-4" style="padding-left: 3%; padding-right: 3%" >
+  <div *ngFor="let show of showList">
+    <app-show [movie]="show"></app-show>
+  </div>
+</div>
